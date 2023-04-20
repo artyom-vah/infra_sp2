@@ -10,11 +10,11 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = getenv('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv('DEBUG') == 'True'
+DEBUG = getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -101,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = os.getenv('TIME_ZONE')
+TIME_ZONE = getenv('TIME_ZONE')
 
 USE_I18N = True
 
