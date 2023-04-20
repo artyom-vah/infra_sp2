@@ -1,7 +1,8 @@
+import os
 from os import getenv
 from datetime import timedelta
 from pathlib import Path
-import os
+
 
 # from dotenv import load_dotenv
 # load_dotenv()
@@ -9,11 +10,11 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = getenv('SECRET_KEY')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = getenv('DEBUG') == 'True'
+DEBUG = os.getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -100,7 +101,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = getenv('TIME_ZONE')
+TIME_ZONE = os.getenv('TIME_ZONE')
 
 USE_I18N = True
 
