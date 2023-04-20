@@ -1,17 +1,19 @@
-# from os import getenv
+from os import getenv
 from datetime import timedelta
 from pathlib import Path
 import os
 
 # from dotenv import load_dotenv
+# load_dotenv()
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-# load_dotenv()
-# SECRET_KEY = getenv('TOKEN')
-SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
+
+SECRET_KEY = getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = getenv('DEBUG') == 'True'
 
 ALLOWED_HOSTS = ['*']
 
@@ -75,13 +77,6 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 
 AUTH_USER_MODEL = 'reviews.User'
 # Password validation
@@ -105,7 +100,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = getenv('TIME_ZONE')
 
 USE_I18N = True
 
